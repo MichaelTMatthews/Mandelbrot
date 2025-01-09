@@ -38,7 +38,7 @@ def make_mandelbrot_renderer(pixel_dims):
 
             return (new_z, diverged_n), None
 
-        n = 1000
+        n = 100
         (z, diverged_n), _ = jax.lax.scan(
             _apply_f, (z, -jnp.ones(pixel_dims, dtype=int)), jnp.arange(n)
         )
